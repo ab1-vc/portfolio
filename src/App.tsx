@@ -15,12 +15,13 @@ const profile = {
   linkedin: "https://www.linkedin.com/in/subaharisha-a-92a974338/",
   github: "https://github.com/ab1-vc",
   location: "Kanyakumari, Tamil Nadu",
-  resume: "/Subaharisha-A-Resume.html",
+  resume: `${import.meta.env.BASE_URL}Subaharisha-A-Resume.html`,
   period: "2025–26",
 };
 
 const whatsappNumber = `${profile.countryCode}${profile.phone}`;
 const emailHref = profile.email.includes("@") ? `mailto:${profile.email}` : undefined;
+const asset = (name: string) => `${import.meta.env.BASE_URL}${name}`;
 
 type IconName =
   | "arrow"
@@ -59,7 +60,7 @@ const projects = [
   {
     number: "01",
     title: "GASCKK Chatbot",
-    image: "/gasckk-chatbot.png",
+    image: asset("gasckk-chatbot.png"),
     alt: "Student support chatbot interface concept",
     description:
       "A student-support chatbot project for BCA students, providing syllabus and college-related information with English and Tamil responses.",
@@ -70,7 +71,7 @@ const projects = [
   {
     number: "02",
     title: "Ajil Aqua Park Website",
-    image: "/ajil-aqua-park.jpg",
+    image: asset("ajil-aqua-park.png"),
     alt: "RO water purifiers displayed at the Ajil Aqua Park store",
     description:
       "A responsive business website created to present products, services, company information, contact details, and customer enquiries.",
@@ -81,7 +82,7 @@ const projects = [
   {
     number: "03",
     title: "Inventory Billing System",
-    image: "/inventory-billing.png",
+    image: asset("inventory-billing.png"),
     alt: "Inventory and billing dashboard concept",
     description:
       "A Python and Flask inventory and billing system with product and customer management, billing, sales and stock reports, low-stock monitoring, and login functionality.",
@@ -92,7 +93,7 @@ const projects = [
   {
     number: "04",
     title: "Sujin Bus & Cab Booking",
-    image: "/sujin-bus.png",
+    image: asset("sujin-bus.png"),
     alt: "Two Sujin buses side by side on a rainy highway under a lightning sky",
     description:
       "A responsive website for a local bus and cab booking service, featuring service information, contact options, location details, and booking enquiries.",
@@ -232,7 +233,7 @@ export default function App() {
       <main>
         <section className="hero" id="home">
           <div className="hero-visual" aria-hidden="true">
-            <img src="/gasckk-chatbot.png" alt="" />
+            <img src={asset("gasckk-chatbot.png")} alt="" />
           </div>
           <div className="hero-overlay" />
           <div className="hero-content">
